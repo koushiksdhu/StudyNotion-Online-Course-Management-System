@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Study Notion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/validateSignUp.js"></script>
+</head>
+
+<body>
+    <div class="flex min-h-[90vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-xl space-y-8">
+            <div>
+                <div class="relative mx-auto h-[84px] w-[98px]">
+                    <img src="./assets/images/short-logo.svg" class=" h-[84px] w-[98px]" alt="Study Notion" />
+                </div>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+                    Register for Study Notion
+                </h2>
+            </div>
+
+            <div class="mt-8 space-y-6" autocomplete="new-password">
+            <form action="Register" method="post">			<!-- Register page is called via post method -->
+                <div class="-space-y-px rounded-md shadow-sm">
+                    <div class="flex flex-col md:flex-row md:space-x-2 mb-2">
+                        <div class="w-full">
+                            <label htmlFor="name" class="sr-only">
+                                Name
+                            </label>
+                            <input id="name" name="name" type="text" autocomplete="new-password" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Name" />
+                        </div>
+                        <div class="mt-2 w-full md:mt-0">
+                            <label htmlFor="email-address" class="sr-only">
+                                Email address
+                            </label>
+                            <input id="email" name="email" type="email" autocomplete="new-password" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Email address" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row md:space-x-2 mb-2">
+                        <div class="mt-2 w-full md:mt-0">
+                            <label htmlFor="contact" class="sr-only">
+                                Contact Number
+                            </label>
+                            <input id="contact_" name="contact" type="text" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Contact Number" />
+                        </div>
+                        <div class="w-full">
+                            <label htmlFor="dob" class="sr-only">
+                                Date of Birth
+                            </label>
+                            <input id="dob" name="dob" type="text" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Date of Birth" onfocus="changeDobTypeToDate()"
+                                onblur="changeDobTypeToText()" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:space-x-2 mt-2">
+                        <div class="mt-2 w-full md:mt-0">
+                            <label htmlFor="gender" class="sr-only">
+                                Gender
+                            </label>
+                            <select name="gender" id="gender" required defaultValue="Gender"
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm">
+                                <option value="Gender" disabled selected>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="w-full">
+                            <label htmlFor="nationality" class="sr-only">
+                                Nationality
+                            </label>
+                            <input id="nationality" name="nationality" type="text" autocomplete="new-password" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Nationality" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:space-x-2 mb-2">
+                        <div class="mt-2 w-full">
+                            <label htmlFor="address" class="sr-only">
+                                Address
+                            </label>
+                            <textarea id="address" name="address" type="text" autocomplete="new-password" required
+                                class="relative flex min-h-[60px] w-full appearance-none items-start rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:space-x-2 mb-2">
+                        <div class="relative mt-2 w-full">
+                            <label htmlFor="password" class="sr-only">
+                                Password
+                            </label>
+                            <input id="password" name="password" autocomplete="new-password" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 pr-12 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Password" type="password" />
+
+                        </div>
+                        <div class="mt-2 w-full">
+                            <label htmlFor="confirmPassword" class="sr-only">
+                                Confirm Password
+                            </label>
+                            <input id="confirmPassword" name="confirmPassword" type="password"
+                                autocomplete="new-password" required
+                                class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#00ACE9] focus:outline-none focus:ring-[#00ACE9] sm:text-sm"
+                                placeholder="Confirm Password" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" value="submit"
+                        class="group relative flex w-full justify-center rounded-md border border-transparent bg-[#1ab79d] py-2 px-4 text-sm font-medium text-white hover:bg-[#78edd7] focus:outline-none focus:ring-2 focus:ring-[#00ACE9] focus:ring-offset-2">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+            </div>
+            <p class="text-center text-gray-700">
+                Already have an Account?
+                <a href="./login.html">
+                    <span class="cursor-pointer font-semibold underline">
+                        Login
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function changeDobTypeToDate() {
+            let dob = document.getElementById("dob");
+            dob.type = 'date'
+        }
+        function changeDobTypeToText() {
+            let dob = document.getElementById("dob");
+            dob.type = 'text'
+        }
+    </script>
+</body>
+
+</html>

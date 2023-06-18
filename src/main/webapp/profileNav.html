@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- 
+    - primary meta tag
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- external scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="top">
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.svg" width="162" height="50" alt="StudyNotion logo" />
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" width="162" height="50" alt="StudyNotion logo" />
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="relative ml-3">
+          <div>
+            <button type="button"
+              class="flex rounded-full bg-gray-800 text-base focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <img src="./assets/images/short-logo.svg"
+                class="h-16 w-16 rounded-full" alt="avatar" />
+            </button>
+          </div>
+          <div
+            class="hidden absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <a href="ViewProfile" class="block px-4 py-2 text-2xl text-gray-700 hover:bg-gray-100
+            " role="menuitem" tabindex="-1" id="user-menu-item-0">View Profile</a>
+            <a href="EditProfile" class="block px-4 py-2 text-2xl text-gray-700 hover:bg-gray-100
+            " role="menuitem" tabindex="-1" id="user-menu-item-0">Edit Profile</a>
+            <a href="ChangePassword" class="block px-4 py-2 text-2xl text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1"
+              id="user-menu-item-1">Change Password</a>
+            <a href="Signout" class="block px-4 py-2 text-2xl text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1"
+              id="user-menu-item-2">Sign out</a>
+          </div>
+        </div>
+        </div>
+
+        <!-- hamburger -->
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true" role="img" class=" md hydrated">
+            <div class="icon inner">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512">
+                <title>Menu</title>
+                <path stroke-linecap="round" stroke-miterlimit="10" d="M80 160h352M80 256h352M80 352h352"
+                  class="ionicon-fill-none ionicon-stroke-width"></path>
+              </svg>
+            </div>
+          </ion-icon>
+        </button>
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userMenu = document.querySelector('[aria-labelledby="user-menu-button"]');
+
+    userMenuButton.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      userMenu.classList.toggle('hidden');
+    });
+
+    userMenu.addEventListener('transitionend', function () {
+      if (this.classList.contains('hidden')) {
+        this.removeAttribute('style');
+      } else {
+        this.style.transform = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
