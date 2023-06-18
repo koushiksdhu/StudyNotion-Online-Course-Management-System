@@ -9,7 +9,6 @@ Study Notion is an online course management system developed using JSP, Servlet,
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -39,7 +38,7 @@ To run Study Notion, you need to have the following software installed on your m
 
 1. Clone the Study Notion repository from GitHub:
    ```
-   git clone https://github.com/your-username/study-notion.git
+   git clone https://github.com/koushiksdhu/StudyNotion-Online-Course-Management-System.git
    ```
 
 2. Import the project into your chosen IDE.
@@ -66,7 +65,3 @@ Once Study Notion is installed and running, you can access it by opening a web b
 2. Once signed in, you can browse the available courses and access the course materials.
 
 Contributions to Study Notion are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code according to your needs.
