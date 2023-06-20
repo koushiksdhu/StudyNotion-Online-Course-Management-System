@@ -27,7 +27,7 @@ To get started with Study Notion, follow the installation and usage steps outlin
 
 ## Prerequisites
 
-To run Study Notion, you need to have the following software installed on your machine:
+To run Study Notion, you need to have the following software installed in your machine:
 
 - Java Development Kit (JDK)
 - Apache Tomcat Server
